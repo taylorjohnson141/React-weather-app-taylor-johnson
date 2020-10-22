@@ -10,5 +10,15 @@ class App extends Component{
     location:''
   }
 }
+render(){
+  return(
+    <>
+    <Name/>
+    <Form/>
+    ({this.state.location && <currentWeather location = {this.state.location}/>})
+    ({this.state.location && <FiveDayForcast location = {this.state.location}/>})
+    </>
+  )
+}
 }
 export default App;
