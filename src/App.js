@@ -10,12 +10,16 @@ class App extends Component{
     location:''
   }
 }
+addLocation = (location) =>{
+  this.setState({location:location})
+}
+
 render(){
   return(
     <>
     <Name/>
-    <Form/>
-    ({this.state.location && <currentWeather location = {this.state.location}/>})
+    <Form addLocation ={this.addLocation}/>
+    ({this.state.location && <CurrentWeather location = {this.state.location}/>})
     ({this.state.location && <FiveDayForcast location = {this.state.location}/>})
     </>
   )
